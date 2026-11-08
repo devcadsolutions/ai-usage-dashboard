@@ -1,10 +1,7 @@
 services:
   ai-usage:
-    build: https://github.com/devcadsolutions/ai-usage-dashboard.git#master
+    image: ghcr.io/devcadsolutions/ai-usage-dashboard:latest
     container_name: ai-usage-dashboard
     restart: unless-stopped
     ports:
       - "8080:80"
-    environment:
-      USAGE_APP_PASSWORD: ${USAGE_APP_PASSWORD:-CHANGE_ME_NOW}
-      USAGE_INGEST_TOKEN: ${USAGE_INGEST_TOKEN:-CHANGE_ME_TOKEN}
